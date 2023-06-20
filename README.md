@@ -1,3 +1,1 @@
 # go-rest-api
-
-go
