@@ -1,5 +1,5 @@
 PROJECT_NAME := "go-rest-api"
-PKG := "gitlab.com/devops-projects6943118/$(PROJECT_NAME)"
+PKG := "github.com/sofianhw/$(PROJECT_NAME)"
 PKG_LIST := $(shell go list ${PKG}/... | grep -v /vendor/)
 BINARY_NAME=main
 

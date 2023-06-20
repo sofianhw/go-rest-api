@@ -37,7 +37,7 @@ func TestGetAlbums(t *testing.T) {
 	assert.NoError(t, err)
 
 	// check that the response contains the expected number of albums
-	assert.Len(t, albums, 3)
+	assert.Len(t, albums, 4)
 }
 
 // for adding a new album:
