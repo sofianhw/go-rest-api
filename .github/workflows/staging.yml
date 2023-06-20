@@ -22,6 +22,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-and-test
     steps:
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          # list of Docker images to use as base name for tags
+          images: |
+            sofianhw/go-rest-api
+          tags: |
+            type=sha
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       - name: Set up Docker Buildx
@@ -35,4 +44,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/go-rest-api:${GITHUB_SHA:0:5}
+          tags: ${{ steps.meta.outputs.tags }}
