@@ -35,4 +35,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: sofianhw/go-rest-api-${GITHUB_SHA:0:5}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/go-rest-api:${GITHUB_SHA:0:5}
